@@ -1,0 +1,14 @@
+{
+    "customizations": {
+        "codespaces": {
+            "repositories": {
+                "casaroli/dispatch-phone-home": {
+                    "permissions": "write-all"
+                },
+                "casaroli/phone-home": {
+                    "permissions": "write-all"
+                }
+            }
+        }
+    }
+}

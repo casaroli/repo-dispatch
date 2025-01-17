@@ -1,3 +1,4 @@
+import process;
 import getInput from '../common/getInput.mjs';
 import reportStatus from '../common/reportStatus.mjs';
 import dispatchWorkflow from './dispatchWorkflow.mjs'
@@ -53,6 +54,11 @@ console.log('::group::Report dispatched status to self');
 
 console.log('context:', status_context);
 
-await reportStatus(status_token, status_repository, status_sha, status_context, 'pending', 'Dispatched');
-
+try {
+  await reportStatus(status_token, status_repository, status_sha, status_context, 'pending', 'Dispatched');
+}
+catch {
+  console.log("::endgroup::");
+  process.exit(1)
+}
 console.log("::endgroup::");
